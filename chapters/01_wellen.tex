@@ -1,0 +1,93 @@
+\section{Wellen}
+
+\subsection{Einleitung}
+\begin{itemize}
+    \item transversale Wellen (z.B. Seilwellen, schwingende Saite)
+    \item longitudinale Wellen (z.B. Schallwellen)
+\end{itemize}
+
+\subsection{Wellentypen, -ausbreitung}
+\subsubsection{Wellenfunktion \& Wellengleichung}\[\xi = \xi(x,t) = f(x \pm vt)\]
+mit $x$ Raumkoordinate, $t$ Zeit, $f$ Wellenformfunktion, $v$ Phasengeschwindigkeit
+
+Für alle Prozesse mit Wellencharakter gilt:
+$$\diffp[2]\xi t = v^2 \diffp[2]\xi x$$
+Eine allgemeine Lösung für die Wellengleichung ist der Form:
+$$\xi(x,t) = f(x-vt) + g(x+vt)$$
+für beliebige Funktionen $f,g$.
+
+\subsubsection{Harmonische Welle}
+\[\xi(x,t) = \xi_0 \sin(kx \pm \omega t) = \xi_0 e^{i(kx\pm \omega t)}\]
+mit $k$ Wellenzahl/Wellenvektor, $\xi_0$ Amplitude, $\omega$ Kreisfrequenz
+
+Es gelten die folgenden Beziehungen:
+\begin{itemize}
+    \item $v = f \cdot \lambda = \frac{\omega}{k}$ \hfill Phasengeschw. $[\si{\meter\per\second}]$
+    \item $k = \frac{2\pi}{\lambda}$ \hfill Wellenzahl $[\si{\per\meter}]$
+    \item $f = \nu = \frac{\omega}{2\pi}$ \hfill Frequenz $[\si{\hertz}]$
+    \item $T = f^{-1} = \frac{2\pi}{\omega}$ \hfill Periode $[\si{\second}]$
+\end{itemize}
+
+\subsubsection{Transversale Wellen}
+Für das Modell der Seilwelle erhalten wir für die Ausbreitungsgeschwindigkeit
+$$v = \sqrt{\frac{S}{\rho}}$$
+wobei $S$ mit $[\si{\newton\per\square\meter}]$ die Zugspannung und $\rho$ mit $[\si{\kilogram\per\meter\cubed}]$ die Dichte des Seiles ist.
+
+\subsubsection{Longitudinale Wellen}
+In einem Festkörper gilt für die \textbf{Normalspannung} $\sigma$ entlang des Mediums
+\[\sigma = \diff {F_\perp} a \tag*{$[\si{\newton\per\meter\squared}] = [\si{\pascal}]$}\]
+und für die \textbf{Schubspannung} $\tau$ senkrecht dazu:
+\[\tau = \diff {F_\parallel} a \tag*{$[\si{\newton\per\meter\squared}] = [\si{\pascal}]$}\]
+Für ein lineares Verhältnis zwischen $\sigma$ und der relativen Auslenkung $\varepsilon_l$ erhalten wir
+$$\varepsilon_l = \frac{\Delta l}{l} = \frac{\sigma}{E}$$
+wobei $E$ mit $[\si{\pascal}]$ das Elastizitätsmodul ist (i.e. wie resistent es gegenüber Verformungen ist). Für die Phasengeschwindigkeit von longitudinalen Wellen in Festkörpern erhalten wir
+$$v = \sqrt{\frac{E}{\rho}}$$
+
+\subsubsection{Ebene Wellen \& Polarisation}
+
+\subsubsection{Kugelwellen}
+
+\subsubsection{Energietransport}
+
+\subsubsection{Intensität}
+
+\subsection{Prinzip der Superposition}
+\subsection{Reflexion und Transmission}
+\subsection{Stehene Wellen}
+\subsection{Akustik, Musikinstrumente*}
+\subsection{Beugung, Brechung \& Dispersion}
+
+\subsubsection{Huygen'sche Prinzip}
+Betrachte jeden Punkt einer Wellenfront als Quelle einer Kugelwelle. Somit können wir die Beugung an einem Gitter mit $N$ Spalten und Splatabstand $\delta$ herleiten:
+$$\xi(\alpha, r, t) = \frac{a}{r}\cdot\frac{\sin\bk{N \frac{\Delta \varphi}{2}}}{\sin\bk{\frac{\Delta \varphi}{2}}} \cdot e^{i\bk{kr-\omega t}}$$
+wobei $\alpha$ der Betrachtungswinkel, $r$ die Distanz zum Schirm ist ($d \ll r$ für Kleinwinkelnäherung) und $$\Delta\varphi = k\delta \sin \alpha$$ die Phasendifferenz zwischen zwei benachbarten Punktquellen von Amplitude $a$ ist. Für die Intensität erhalten wir:
+$$\abk{I} \sim \frac{a^2}{r^2} \cdot \frac{\sin^2\bk{N \frac{\Delta \varphi}{2}}}{\sin^2\bk{\frac{\Delta \varphi}{2}}}$$
+Es gilt also:
+\begin{itemize}
+    \item Bei $\alpha = 0$ ist ein Maximum, dessen Breite mit grösserem $N$ abnimmt.
+    \item Für $\delta > \lambda$ bestimmt $\frac{\delta}{\lambda}$ den Abstand der Maxima: $\sin \alpha_n = n \frac{\lambda}{\delta}$ mit $n \in \N$
+\end{itemize}
+
+\subsubsection{Beugung am Einzelspalt}
+Bilden wir den Limes $N \to \infty$ und $\delta \to 0$, erhalten wir die Beugung am Spalt der Breite $d = \delta \cdot N$ und Intensität $A = N \cdot a, (a \to 0)$:
+$$\abk{I} \sim A^2\frac{\sin^2 \frac{\Delta \varphi}{2}}{\bk{\frac{\Delta \varphi}{2}}^2}$$
+Die Intensitätsminima $\abk{I} = 0$ liegen somit bei:
+$$ d \sin \alpha = n \lambda$$
+Also führen ein grösseres $d$ oder kürzeres $\lambda$ zu einem engeren Beugungsmuster. Es folgt:
+\begin{itemize}
+    \item $d < \lambda$: Breites Maximum in der Mitte, für $d \ll \lambda$ erhalten wir eine Punktquelle.
+    \item $d \approx \lambda$: Beugung mit mehreren Maxima.
+    \item $d \gg l$: Schattenwurf, also keine Beugung resp. Inteferenz.
+\end{itemize}
+
+\subsubsection{Reflexion \& Brechung}
+Geometrisch druch das Huygen'sche Prinzip motiviert erhalten wir für die \textbf{Reflexion}:
+$$\alpha_{\text{Eintritt}} = \alpha_{\text{Austritt}}$$
+wobei die Winkel zur Normalen der Reflexionsfläche gemessen sind. Ähnlich folgt das \textbf{Brechungsgesetz}, resp. Snellius Gesetz mit unterschiedlichen Phasengeschwindigkeiten $v_1, v_2$ von verschiedenen Medien:$$\frac{\sin \alpha}{\sin \beta} = \frac{v_1}{v_2} = \frac{\lambda_1}{\lambda_2}$$
+Das Fermat'sche Prinzip, das Prinzip der kürzesten Laufzeit, liefert dasselbe Resultat. Eine \textbf{Totalreflexion} tritt auf bei:
+$$\sin \alpha_2 = \frac{v_2}{v_1}\sin \alpha_1 > 1$$
+da Werte über 1 nicht im reellen Definitionsbereich von $\arcsin$ sind.
+\subsubsection{Dispersion*}
+Die Annahme ohne Dispersion war $v_p = \frac{\omega}{k} = \text{const}$. Mit Dispersion erhalten wir die Dispersionsrelation $v(k) = \frac{d\omega(k)}{dk}$ für verschiedene Frequenzen. Also gilt:
+$$\xi(x,t) = \frac{1}{\sqrt{2}} \int_{-\infty}^\infty A(k) e^{i (kx - \omega(k)t)}dk$$
+Ein Wellenpaket (Gemisch aus vielen Frequenzen nach Fourier-Transformation) hat somit eine Gruppengeschwindigkeit $v_g$ und eine Phasengeschwindigkeit $v_p$

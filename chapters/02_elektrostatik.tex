@@ -1,0 +1,110 @@
+\section{Elektrostatik}
+Betrachtung statischer elektrischer Ladungen
+\subsection{elektrische Ladung}
+\begin{itemize}
+    \item Ladung $q$ positiv oder negativ
+    \item Ladungsträger: Elektronen (-) und Protonen (+)
+    \item Elementarladung $q_e$
+    \item Einheit: Coulomb $1\si{\coulomb} = 6.25\cdot10^{18} q_e$
+    \item Erhaltung der Ladung
+\end{itemize}
+
+Ladungsdichte: $\lambda = \diff qx$, Flächenladungsdichte $\tau = \diff qA$, Raumladungsdichte $\rho = \diff qV$
+
+\subsection{Coulombsche Gesetz}
+Die elektrostatische Kraft von 1 auf Körper 2 ist
+\[F_{21} = k \frac{q_1q_2}{ (r_{21})^2}\evec{r}_{21}\tag*{[\si{\newton}]}\]
+mit Coulomb-Konstante $k = \frac{1}{4\pi \varepsilon_0}$ (im SI-System)
+
+Elektrostatische Kraft ist $2\cdot 10^{39} = \frac{F_e}{F_g} = \frac{k}{G}$ stärker als die Gravitationskraft.
+
+\subsection{Energie einer Ladungsverteilung}
+Die Kraft $F_{21}$ über den Radius $\infty \to r_{21}$ integriert gibt
+\[E_{pot} = W = -\int_\infty^{r_{21}}\vec{F}_{21}(r)\ d\vec{s} = \frac{1}{4\pi \varepsilon_0}\frac{q_1q_2}{r_{21}}\unit{\joule}\]
+Für $n$ Ladungen gilt:
+\[W_{tot} = \frac{1}{4\pi \varepsilon_0}\frac{1}{2}\sum_{j, i\neq j} \frac{q_j q_i}{r_{ji}}\unit{\joule}\]
+Da $\vec{F}_{21} \cdot d\vec{s}_\perp = 0$ gilt, ist das Arbeitsintegral wegunabhängig. Dies gilt immer für konservative Kraftfelder.
+
+\subsection{Das elektrische Feld}
+Das elektrische Feld bezeichnet die Kraft auf eine Testladung $q_0$ (keine Influenz: $q_0$ sehr klein). Wir erhalten ein Vektorfeld:
+\[\vec{E}(\vec{r}_0) = \frac{1}{4\pi \varepsilon_0} \sum_{i} \frac{q_i}{\abs{\vec{r}_0 - \vec{r}_i}^3}\bk{\vec{r}_0 - \vec{r}_i} \unit{\newton \per \coulomb}\]
+Für kontinuierliche Verteilungen mit der Ladungsdichte $\rho$ gilt:
+\[\vec{E}(\vec{r}) = \frac{1}{4\pi \varepsilon_0} \int_{\R^3} \frac{\rho}{\abs{\vec{r} - \vec{r'}}^3}\bk{\vec{r}_0 - \vec{r'}}dV \unit{\newton \per \coulomb}\]
+wobei die Ladungsdichte $\rho = \rho(\vec{r'})$ vom der Position abhängen kann. Für einen unendlichen Stab der Ladungsdichte $\lambda$ ist das elektrische Feld gegeben durch
+\[E = \frac{2k\lambda}{r}\]
+\subsubsection{Feldlinien}
+Feldlinien laufen (in der Elektrostatik) von $+$-Ladungen zu $-$-Ladungen, also liegen die Kraftvektoren von $\vec{E}$ tangent zu den Feldlinien. Die Stärke des Feldes wird qualitativ durch die Dichte der Feldlinien dargestellt.
+\subsection{Gauss'sches Gesetz}
+Der elektrische Fluss $\Phi_E$ ist die Feldliniendichte über die Oberfläche eines Volumes $\partial V$:
+\[\Phi_E = \vec{E} \cdot \vec{A} = \oint_{\partial V}\vec{E}\cdot d\vec{A}\unit{\volt\meter}\]
+Für eine Punktladung $q$ erhalten wir mit dem Integral über die Kugeloberfläche:
+\[\Phi_E = \frac{q}{\varepsilon_0}\]
+Da $\vec{E} \cdot d\vec{A}_\perp = 0$ keinen Beitrag zum Fluss liefert, gilt unabhängig von der Form von $V$ für Ladungen $q_i \in V$:
+\[\Phi_E = \frac{1}{\varepsilon_0}\int_{V}\rho \ dV \unit{\volt\meter}\]
+
+\subsection{Felder von einfachen Ladungsverteilungen}
+\subsubsection{Kugeloberfläche}
+Das elektrische Feld einer mit $Q$ geladenen Kugel mit Radius $R$ und Flächenladungsdichte $\sigma = \frac{Q}{4\pi R^2}$ ist
+\begin{itemize}
+    \item $r>R$: $$\oint_{\partial V = 4\pi r^2}\Vec{E}\cdot \Vec{A} = E(r) 4\pi r^2 = \frac{Q}{\varepsilon_0}$$
+    also gilt
+    $$\Vec{E}(\Vec{r}) = \frac{1}{4\pi \varepsilon_0} = \frac{Q}{r^2}\evec{r}$$
+    \item $r<R$: Da sich die Ladungen auf gegenüberliegenden Kugelsegmenten durch jeden Punkt $\in V$ aufheben, gilt $$\Vec{E}(\Vec{r}) = 0$$
+\end{itemize}
+
+\subsubsection{langer Stab}
+Das elektrische Feld eines mit $Q$ geladenen Stabs mit Länge $l \to \infty$ und Längenladungsdichte $\lambda = Q \cdot l$ ist
+$$E(r) = \frac{\lambda}{2\pi \varepsilon_0 r} = \frac{2k\lambda}{r} $$
+
+\subsubsection{ausgedehnte Ebene}
+Das elektrische Feld einer mit $Q$ geladenen Fläche mit Radius $R$ und Flächenladungsdichte $\sigma = \frac{Q}{A}$ ist homogen:
+$$E(r) = \frac{\sigma}{2 \varepsilon_0}$$
+Für einen Plattenkondensator mit Ladungen $Q$ und $-Q$ erhalten wir zwischen den Platten
+$$E(r) = \frac{\sigma}{\varepsilon_0}$$
+und ausserhalb der Platten gilt $E(r) = 0$.
+
+\subsection{Energie im elektrischen Feld}
+Die \textbf{Energiedichte} eines elektrischen Feldes ist gegeben durch 
+\[u = \frac{\varepsilon_0}{2}E^2\unit{\joule\per \meter \cubed}\]
+Die gesamte elektrische potenzielle Energie ist also
+\[U = \int_V \frac{\varepsilon_0}{2}E^2 dV \unit{\joule}\]
+
+\subsection{elektrische Potential}
+Es gilt $\Vec{F}_E= q_0\Vec{E} = -\Vec{F}_{ext}$ für quasi-stationäres Kräftegleichgewicht:
+\begin{multline*}
+    W_{BA} = W_{ext} = \int_A^B\Vec{F}_{ext} \cdot d\Vec{s}\\ = -q_0 \int_A^B \Vec{E}\cdot d\Vec{s} = U_B - U_A \unit{J}
+\end{multline*}
+Es ist ein konservatives Vektorfeld, also gilt für Kreisintegrale:
+$$\oint \vec{E}d\vec{s} = 0 \Leftrightarrow \vec{E} = -\vec{\nabla}\phi$$
+daraus folgt
+\[\int_A^B\vec{E}d\vec{s} = \phi_B - \phi_A =: \phi_{BA} \unit{\joule \per \coulomb = \volt}\]
+Notation:
+\begin{itemize}
+    \item $\Phi$ Potential
+    \item $V$ Spannungsquelle (Voltage) mit $V = \Phi_B - \Phi_A$
+    \item $U$ potentielle Energie
+\end{itemize}
+
+Für allgemeine Ladungsverteilungen gilt:
+\[\phi(\vec{r}) = \frac{1}{4\pi \varepsilon_0}\int_{\R^3}\frac{\rho(\vec{r'})}{\abs{\vec{r}-\vec{r'}}} dV \unit{\volt}\]
+
+
+\subsection{Potentiale von einfachen Ladungsverteilungen}
+
+\subsubsection{Plattenkondensator}
+\[\phi_{BA} = E \Delta z \unit{V}\]
+\[W_{BA} = E q_0 \Delta z \unit{J}\]
+\subsubsection{Punktladung}
+\[\phi(r) = \frac{1}{4\pi \varepsilon_0}\frac{q}{r}\unit{V}\]
+
+\subsubsection{Ringladung}
+\[\phi(x_0) = \frac{1}{4\pi \varepsilon_0}\frac{q}{\sqrt{x_0^2+R^2}}\unit{V}\]
+
+\subsection{Satz von Gauss}
+Für ein Vektorfeld $\Phi$ gilt
+\[\int_{\partial V} \vec{F} \cdot d \vec{a} = \int_{V}\divergence \vec{F} \cdot dV\]
+Wir können also ein Flächenintegral in ein Volumenintegral überführen.
+Auf das Gauss'sche Gesetz angewendet erhalten wir
+\[\divergence \vec{E} = \frac{\rho}{\varepsilon_0}\]
+
+\subsection{Satz von Stokes}

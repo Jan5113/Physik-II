@@ -1,0 +1,104 @@
+\documentclass[10pt, a4paper, twocolumn]{article}
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[ngerman]{babel}
+\usepackage{XCharter} 
+\usepackage{fancyhdr} 
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{lipsum}
+\usepackage[svgnames]{xcolor} 
+\usepackage{booktabs} 
+\usepackage{lastpage} 
+\usepackage{enumitem} 
+
+\usepackage{diffcoeff}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage[hang, small, labelfont=bf, up, textfont=it]{caption} 
+\usepackage{siunitx}
+\usepackage{parskip}
+\usepackage{sectsty} 
+
+\newcommand{\abk}[1]{\left\langle #1 \right \rangle}
+\newcommand{\bk}[1]{\left(#1\right)} 
+\newcommand{\cbk}[1]{\left\{#1\right\}} 
+\newcommand{\sbk}[1]{\left[#1\right]} 
+\newcommand{\abs}[1]{\left|#1\right|} 
+\newcommand{\norm}[1]{\left\|#1\right\|} 
+\newcommand{\evec}[1]{\hat{\mathbf{#1}}}
+%\renewcommand{\sin}[1]{\text{sin}\braket{#1}}
+%\renewcommand{\cos}[1]{\cos\braket{#1}}
+%\renewcommand{\tan}[1]{\tan\braket{#1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\unit}[1]{\tag*{[\si{#1}]}}
+\newcommand{\quer}[1]{\overline{#1}}
+
+\DeclareMathOperator{\divergence}{div}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\grad}{grad}
+
+\setlist{noitemsep} 
+\allsectionsfont{\usefont{OT1}{phv}{b}{n}}
+\geometry{
+	top=1cm,
+	bottom=1.5cm, 
+	left=2cm, 
+	right=2cm, 
+	includehead,
+	includefoot,
+}
+\setlength{\columnsep}{7mm} % Column separation width  
+\pagestyle{fancy} 
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt} 
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}} 
+% Headers
+\rhead{\footnotesize\leftmark}
+\lhead{\footnotesize\textit{Wellenlehre, Elektrizität \& Magnetismus}}
+\rfoot{\footnotesize Page \thepage\ von \pageref{LastPage}}
+\cfoot{}
+\fancypagestyle{firstpage}{
+	\fancyhf{}
+    \renewcommand{\headrulewidth}{0.0pt} 
+	\rfoot{\footnotesize Seite \thepage\ von \pageref{LastPage}} 
+}
+\usepackage{titling} 
+\pretitle{
+	\vspace{-40pt}
+	\rule{\linewidth}{0.4pt}\par\vskip 10pt
+	\huge\selectfont
+}
+
+\posttitle{\par\vskip 15pt \large \text{im Rahmen der Physik II Vorlesung FS 2021} \\ \text{von Prof. Rainer \textsc{Wallny}}} 
+\predate{\vspace{-5pt} \large}
+\postdate{\vspace{4pt} \\ 
+\rule{\linewidth}{0.4pt}}
+\setlength{\parindent}{0em}
+
+\title{Wellenlehre, Elektrizität \& Magnetismus \\ Zusammenfassung} 
+\date{\today}
+
+\begin{document}
+    \maketitle 
+    \textit{Die Kapitel und Unterkapitel entsprechen denen vom Skript. Die mit * markierten Kapitel sind nicht Prüfungsrelevant.}
+    \thispagestyle{firstpage} 
+    
+%\setlength{\abovedisplayskip}{1.5em}
+%\setlength{\belowdisplayskip}{1.5em}
+%\setlength{\abovedisplayshortskip}{1.0em}
+%\setlength{\belowdisplayshortskip}{1.0em}
+    
+    \input{chapters/01_wellen}
+    \input{chapters/02_elektrostatik}
+    \input{chapters/03_leiter}
+    
+    \include{chapters/a01_mathematische_mittel}
+\end{document}

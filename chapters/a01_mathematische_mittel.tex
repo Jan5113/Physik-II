@@ -1,0 +1,52 @@
+\section{Mathematische Werkzeuge}
+\subsection{Unsicherheiten}
+Bei einer absoluten Unsicherheit $\delta u$  der Messgrösse $u$ ist die relative Unsicherheit
+$$\frac{\delta u}{u}$$
+
+\subsubsection{Fehlerfortpflanzung}
+Für eine Funktion $f(x_1, x_2, ...)$ gilt
+$$\delta f = \abs{\diffp{f}{x_1}}\delta x_1 + \abs{\diffp{f}{x_2}} \delta x_2 + ...$$
+
+\subsection{Vektoranalysis}
+\textbf{Nabla-Operator} (Notation):
+$$\Vec{\nabla} = \begin{pmatrix}\diffp{}{x}& \diffp{}{y} & \diffp{}{z}\end{pmatrix}^T$$
+\textbf{Laplace-Operator}: für ein Skalarfeld $\phi$ gilt
+\[\Delta \phi = \nabla\cdot(\nabla \phi)\]
+also gilt
+\[\Delta \phi = \diffp[2]{\phi}{x} + \diffp[2]{\phi}{x} + \diffp[2]{\phi}{z}\]
+
+\subsubsection{Skalarfeld}
+Ein \textbf{Skalarfeld} (z.B Gravitationspotential) teilt jedem Punkt einen Skalar zu:
+$$\Phi: \R^3 \to \R$$
+Der \textbf{Gradient} von einem Skalarfeld ist der Richtungsvektor des ''stärksten Anstiegs'':
+$$\text{grad} \Phi = \Vec{\nabla}(\Phi) = \begin{pmatrix}\diffp{\Phi}{x}& \diffp{\Phi}{y} & \diffp{\Phi}{z}\end{pmatrix}^T \in \R^3$$
+Es gilt im allgemeinen
+$$\Vec{\nabla} \cdot (\Vec{\nabla} \times \Vec{A}) =  = 0$$
+
+\subsubsection{Vektorfeld}
+Ein \textbf{Vektorfeld} (z.B. Gravitationsfeld) teilt jedem Punkt einen Vektor zu:
+$$\Vec{F}: \R^3 \to \R^3$$
+Die \textbf{Divergenz} eines Vektorfeldes $\divergence\Vec{F}: \R^3 \to \R$ ist
+$$\divergence \Vec{F} = \Vec{\nabla} \cdot \Vec{F} = \diffp{\Vec{F}}{x} + \diffp{\Vec{F}}{y} + \diffp{\Vec{F}}{z} \in \R$$
+Sie bezeichnet die Quellstärke von $\Vec{F}$ ($\divergence \Vec{F}(x) < 0$: Senke, $=0$ quellenfrei, $>0$ Quelle)
+
+Die \textbf{Rotation} eines Vektorfeldes $\rot\Vec{F}: \R^3 \to \R^3$ ist
+$$\rot \Vec{F} = \Vec{\nabla} \times \Vec{F} =  \begin{pmatrix}\diffp{F_z}{y}-\diffp{F_y}{z}\\ \diffp{F_x}{z}-\diffp{F_z}{x} \\ \diffp{F_y}{x}-\diffp{F_x}{y}\end{pmatrix} \in \R^3$$
+Sie bezeichnet nach der Rechten-Hand-Regel die Rotationsachse von Wirbeln im Feld.
+
+Wir nennen ein Feld \textbf{konservativ}, falls es wirbelfrei ist: $\rot\Vec{F} = 0$. Das \textbf{Gradientenfeld} $\grad \Phi: \R^3 \to \R^3$ eines \textit{Skalarfeldes} ist ein konservatives Vektorfeld.
+
+\subsubsection{Linienintegral im Skalarfeld}
+Für ein Skalarfeld $\Phi: \R^3 \to \R$
+\subsubsection{Linienintegral im Vektorfeld}
+Für ein Vektorfeld $\Vec{F}:\R^3 \to \R^3, \Vec{r} \mapsto \Vec{F}(\Vec{r})$ und ein Weg $\gamma: [a,b] \to \R^3$ erhält man durch Substitution:
+$$\int_\gamma \Vec{F}(\Vec{r}) d\Vec{r} = \int_a^b \Vec{F}(\gamma(x)) \diff{\gamma}{x} dx$$
+In $\R^2$ gilt für $\gamma(x) = \binom{f(x)}{g(x)}$:
+\begin{align*}
+    \int_\gamma \Vec{F}(\Vec{r}) d\Vec{r} &= \int_a^b \Vec{F}\binom{f(x)}{g(x)}\cdot\diff{\Vec{r}}{x} dx\\
+    &= \int_a^b F_x(f(x))f'(x) + F_y(g(x)) g'(x) dx 
+\end{align*}
+Für konservative Vektorfelder ($\Vec{\nabla} \cdot F = 0, F = 0$) gilt über eine Fläche $A$
+$$\oint_{\partial A} \Vec{F} \cdot d\Vec{s} \stackrel{\text{Stokes}}{=} \int_{A} \rot \Vec{F} d\Vec{a} = 0$$
+\subsubsection{Kugelflächenintegral}
+Winkelelement $d\Omega = \sin \vartheta\ d\vartheta\ d\varphi$
